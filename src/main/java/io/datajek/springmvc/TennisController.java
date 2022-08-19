@@ -10,4 +10,14 @@ public class TennisController {
     public String welcome() {
         return "main-menu";
     }
+
+    @RequestMapping("/showPlayerForm")
+    public String showForm() {
+        return "search-player-form";
+    }
+
+    @RequestMapping("/processPlayerForm")
+    public String processForm() {
+        return "player-detail";
+    }
 }
