@@ -6,15 +6,11 @@
 </head>
 <body>
 <h2>Welcome to the tennis player database!</h2>
+<form action="/player.do" method="POST">
+    <b>Player name:</b>
+    <input type="text" name="name"/>
+    <input type="submit" value="Enter"/>
+</form>
 <h3>Player name: <i>${name}</i></h3>
-<%
-System.out.println("Hello from JSP");
-%>
-<%@page import="java.time.LocalDate"%>
-<%
-LocalDate currentDate = LocalDate.now();
-%>
-<p>Current Date: <%= currentDate %> </p>
-<p>Today is <%= currentDate.getDayOfWeek() %> </p>
 </body>
 </html>
