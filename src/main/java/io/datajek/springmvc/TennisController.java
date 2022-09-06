@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Locale;
 
 @Controller
 public class TennisController {
@@ -24,10 +26,10 @@ public class TennisController {
     }
 
     @RequestMapping("/processPlayerForm")
-    public String processForm(HttpServletRequest request, Model model) {
-        String pName = request.getParameter("playerName");
+    public String processForm(@RequestParam(value = "playerName", defaultValue="John") String pName, Model model) {
         Player player = service.getPlayerByName(pName);
-        model.addAttribute("name", pName);
+        String theName = pName.toUpperCase();
+        model.addAttribute("name", theName);
         model.addAttribute("country", player.getNationality());
         model.addAttribute("dob", player.getBirthDate());
         model.addAttribute("titles", player.getTitles());
