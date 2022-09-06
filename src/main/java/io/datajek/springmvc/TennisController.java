@@ -26,7 +26,7 @@ public class TennisController {
     }
 
     @RequestMapping("/processPlayerForm")
-    public String processForm(@RequestParam(value = "playerName", defaultValue="John") String pName, Model model) {
+    public String processForm(@RequestParam(value = "playerName", defaultValue="Monfils") String pName, Model model) {
         Player player = service.getPlayerByName(pName);
         String theName = pName.toUpperCase();
         model.addAttribute("name", theName);
