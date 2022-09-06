@@ -1,7 +1,12 @@
+package io.datajek.springmvc;
+
+import org.springframework.stereotype.Service;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class PlayerService {
 
     private List<Player> players = Arrays.asList(

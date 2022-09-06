@@ -1,3 +1,5 @@
+package io.datajek.springmvc;
+
 import java.util.Date;
 
 public class Player {
